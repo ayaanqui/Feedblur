@@ -1,0 +1,121 @@
+/* Segoe UI */
+
+@font-face {
+    font-family:'Segoe UI';
+    src:url('../../../fonts/segoeui.ttf?-ccwyr8') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+/* Segoe UI Light */
+
+@font-face {
+    font-family:'Segoe UI Light';
+    src:url('../../../fonts/SEGOEUIL.TTF?-ccwyr8') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+/* Segoe UI Bold */
+
+@font-face {
+    font-family:'Segoe UI Bold';
+    src:url('../../../fonts/segoeuib.ttf?-ccwyr8') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+/* Segoe UI Italic */
+
+@font-face {
+    font-family:'Segoe UI Italic';
+    src:url('../../../fonts/segoeuii.ttf?-ccwyr8') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+/* Nimbus Sans */
+
+@font-face {
+    font-family:'nimbus_sans_becker_pbla';
+    src:url('../../../fonts/nimbus_sans_becker_pbla.ttf?-ccwyr8') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+/* Arial */
+
+/* @font-face {
+	font-family: arial;
+    src:url('../../../fonts/arial.ttf?-ccwyr8') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+} */
+
+/* Open sans */
+
+@font-face {
+    font-family:'Open Sans';
+    src:url('../../../fonts/OpenSans-Regular.ttf?-ccwyr8') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+/* Montserrat-Bold */
+
+@font-face {
+    font-family:'Montserrat-Bold';
+    src:url('../../../fonts/Montserrat-Bold.ttf?-ccwyr8') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+/* Montserrat-Regular */
+
+@font-face {
+    font-family:'Montserrat-Regular';
+    src:url('../../../fonts/Montserrat-Regular.ttf?-ccwyr8') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+/* Roboto-Regular */
+
+@font-face {
+    font-family:'Roboto-Regular';
+    src:url('../../../fonts/Roboto-Regular.ttf?-ccwyr8') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+/* Roboto-Light */
+
+@font-face {
+    font-family:'Roboto-Light';
+    src:url('../../../fonts/Roboto-Regular.ttf?-ccwyr8') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+/* Roboto-Condensed */
+
+@font-face {
+    font-family:'Roboto-Condensed';
+    src:url('../../../fonts/Roboto-Condensed.ttf?-ccwyr8') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+/* LiberationSans-Regular */
+
+@font-face {
+    font-family:'LiberationSans-Regular';
+    src:url('../../../fonts/LiberationSans-Regular.ttf?-ccwyr8') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+/* LiberationSans-Bold */
+
+@font-face {
+    font-family:'LiberationSans-Bold';
+    src:url('../../../fonts/LiberationSans-Bold.ttf?-ccwyr8') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+/* LiberationSans-Italic */
+
+@font-face {
+    font-family:'LiberationSans-Italic';
+    src:url('../../../fonts/LiberationSans-Italic.ttf?-ccwyr8') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}

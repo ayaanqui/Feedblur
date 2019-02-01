@@ -1,0 +1,320 @@
+.uposts-feed-loader-prompt {
+	position: absolute;
+	z-index: 5;
+	background: #eee;
+	max-width: 100%;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	padding: 50px 0px;
+	flex-direction: column;
+	align-items: center;
+	display: none;
+}
+
+.uposts-feed-loader-prompt > .spin-loader {
+	width: 50px;
+	height: 50px;
+	border-color: #a0a0a0;
+	border-width: 2px;
+}
+
+.uposts-feed-loader-prompt > .loader-comment {
+	color: #a0a0a0;
+	height: 20px;
+	margin-top: 20px;
+}
+
+.upost-feed-case {
+	position: relative;
+	display: block;
+}
+
+.upost-feed-case > .upost-view {
+	padding: 20px 15px;
+	border: 0px;
+	/* border: 1px solid #e5e5e5;
+	border-top-width: 0px; */
+	background-color: #fff;
+	position: relative;
+}
+
+.upost-feed-case > .upost-view:first-child {
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+.upost-feed-case > .upost-view:last-child {
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-width: 2px;
+}
+
+.upost-view .upost-view-tags-categories {
+    max-height: 33px;
+    margin-bottom: 15px;
+	max-width: 100%;
+	position: relative;
+}
+.upost-view-tags-categories:after {
+    content: " ";
+    background: linear-gradient(to right, transparent, white);
+    width: 40px;
+    height: 100%;
+    position: absolute;
+    right: -2px;
+    top: 0px;
+    z-index: 1;
+}
+.upost-view-tags-categories > .upost-view-tags-categories-inner {
+    position: relative;
+    overflow: auto;
+    white-space: nowrap;
+}
+.upost-view-tags-categories-inner > .upost-category-item {
+    display: inline-block;
+    margin-right: 3px;
+    border-radius: 50px;
+    background-color: #ffffff;
+    font-size: 12px;
+    max-height: 27px;
+    color: #444;
+    border: 1px solid #e5e5e5;
+}
+.upost-view-tags-categories-inner > .upost-category-item:last-child {
+    margin-right: 30px;
+}
+.upost-category-item > img {
+    max-width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+    float: left;
+}
+.upost-category-item > span {
+    padding: 5px 10px;
+    display: inline-block;
+	text-transform: capitalize;
+}
+.upost-view-tags-categories::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+.upost-view-tags-categories::-webkit-scrollbar {
+	width: 6px;
+    /*height: 6px;*/
+	height: 0px;
+    background-color: transparent;
+}
+.upost-view-tags-categories::-webkit-scrollbar-thumb {
+	background-color: rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+.upost-view .upost-view-controller {
+	float: left;
+	width: 30px;
+
+	position: sticky;
+	top: 60px;
+}
+
+.upost-view .upost-view-controller a.upost-author-img > img {
+	width: 30px;
+	border-radius: 100%;
+	margin-top: 3px;
+}
+
+.upost-view .upost-view-controller > a {
+	display: block;
+	font-size: 20px;
+	text-align: center;
+	color: #555;
+}
+
+.upost-view .upost-view-controller a.upost-author-img > img {
+	width: 30px;
+	border-radius: 100%;
+}
+
+.upost-view .upost-view-controller .up-one {
+	font-size: 16px!important;
+	-webkit-user-select: none;
+	margin-top: 2px;
+}
+
+.up-one > .liked {
+	color: #2587d9;
+}
+
+.upost-view .up-post-counter {
+	font-size: 10px;
+	display: block;
+	padding-bottom: 10px;
+}
+
+.upost-view .upost-view-main {
+	padding-left: 40px;
+}
+
+.upost-view .upost-view-heading {
+	margin-bottom: 5px;
+	display: block;
+}
+.upost-view-heading h1 {
+	font-size: 17px;
+	margin: 0px;
+	color: #333;
+}
+
+.upost-view .upost-author-nametag {
+	padding: 0px;
+	display: block;
+	width: 100%;
+	border: 0px;
+	border: 0px;
+}
+
+.upost-author-nametag > .upost-fname {
+	display: inline-block;
+	width: 100%;
+}
+
+.upost-view .upost-author-nametag > small {
+	color: #999;
+	margin-top: 3px;
+}
+.upost-view .upost-author-nametag > a {
+	display: block;
+}
+
+.upost-author-nametag .upost-fname > a {
+	display: inline-block;
+}
+
+.upost-author-nametag .upost-fname > a .fname-sm {
+	font-size: 13px;
+	color: #555;
+	margin-right: 5px;
+	font-weight: bolder;
+}
+
+.upost-author-nametag .upost-fname > .upost-dt-stamp {
+	color: #A9A9A9;
+	float: right;
+	font-size: 10px;
+	font-family: arial;
+	line-height: 20px;
+}
+
+.upost-author-nametag .upost-uname > .at-name-sm {
+	color: #888;
+	font-family: arial;
+	font-size: 13px;
+}
+
+.upost-view-content {
+	margin: 8px 0px;
+	min-height: 0px;
+}
+
+.upost-view-content > p {
+	margin: 0px;
+	line-height: 1.3125;
+	font-size: 15px;
+}
+
+@media screen and (max-width: 500px) {
+	.upost-view-content > p {
+		font-size: 14px;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.upost-view-content > p {
+		font-size: 13.5px;
+	}
+}
+
+.upost-view-content > .up-img {
+	margin-top: 5px;
+}
+
+.up-img > img {
+	border-radius: 3px;
+}
+
+.upost-view .upost-view-toolbar {
+    font-size: 12px;
+    margin-top: 10px;
+    font-family: arial;
+}
+
+.upost-cont-options {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: inherit;
+	align-items: center;
+}
+
+.upost-cont-options > a.upost-opt-item {
+    color: #777;
+    padding: 0px 15px;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    padding: 5px 0px;
+    margin-right: 30px;
+}
+.upost-cont-options > a.upost-opt-item:hover {
+	color: #555;
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+}
+
+/* Replies */
+.upost-replies {
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: 1px solid #f1f1f1;
+}
+
+.upost-replies .upost-view {
+	border-bottom: 1px solid #eee;
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+}
+
+.upost-replies:last-child .upost-view {
+	border-bottom: 0px;
+	margin-bottom: 15px;
+}
+
+.upost-replies .upost-view .upost-view-controller {
+	width: 30px;
+}
+
+.upost-replies .upost-view .upost-view-controller > .upost-author-img {
+	max-width: 30px;
+}
+
+.upost-replies .upost-view .upost-view-main {
+	padding-left: 40px;
+}
+
+.upost-replies .upost-view .upost-fname > a .fname-sm {
+		font-size: 13.5px;
+}
+
+.upost-replies .upost-view .upost-fname > .upost-dt-stamp {
+		font-size: 11px;
+}
+
+.upost-replies .upost-view .upost-uname > a .at-name-sm {
+		font-size: 13px;
+}
+
+.upost-replies .upost-view .upost-view-content > p {
+	font-size: 0.8rem;
+}
+
+.upost-replies .upost-view .upost-view-toolbar {
+	font-size: 12px;
+}

@@ -1,0 +1,33 @@
+@import 'fonts.css';
+@import '../../../fonts/material-design-icons/font/flaticon.css';
+
+body {
+    background-color: #fff;
+    color: #333333;
+    font-family: 'Roboto-Regular';
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    color: #2587d9;
+    text-decoration: none;
+}
+a:hover,
+a:focus {
+    color: #2587f6;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: " ";
+}
+.clearfix:after {
+    clear: both;
+}

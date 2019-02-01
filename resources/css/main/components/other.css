@@ -1,0 +1,44 @@
+@import 'animation-keyframes.css';
+
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.spin-loader {
+    height: 15px;
+    width: 15px;
+    display: block;
+    -webkit-transition: -webkit-transform .15s linear;
+    transition: transform .15s linear;
+    border: 2px solid #555;
+    border-top-color: transparent!important;
+    border-radius: 100%;
+    animation: spinner .7s linear infinite;
+    -webkit-animation: spinner .7s linear infinite;
+}
+
+.load-uposts-loader {
+    padding: 40px;
+}
+
+.load-uposts-loader > .load-upost-spinner {
+    border-width: 3px;
+    border-color: #2587d9;
+    width: 20px;
+    height: 20px;
+    animation: spinner .7s linear infinite;
+    -webkit-animation: spinner .7s linear infinite;
+}
+
+.red-alert {
+    background-color: #25ce91;
+    color: #fff;
+    padding: 3px 6px;
+    border-radius: 5px;
+    margin-left: 5px;
+    font-size: 10px;
+    font-family: arial;
+}

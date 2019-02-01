@@ -1,0 +1,570 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../bower_components/app-route/app-location.html">
+<link rel="import" href="../bower_components/app-route/app-route.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="my-icons.html">
+
+<dom-module id="my-app">
+	<template>
+		<style>
+			:host {
+				--app-primary-color: #4285f4;
+				--app-secondary-color: black;
+
+				display: block;
+			}
+
+			app-drawer-layout:not([narrow]) [drawer-toggle] {
+				display: none;
+			}
+
+			app-header {
+				color: #fff;
+				background-color: var(--app-primary-color);
+			}
+
+			app-header paper-icon-button {
+				--paper-icon-button-ink-color: white;
+			}
+
+			.drawer-list {
+				margin: 0 20px;
+			}
+
+			.drawer-list a {
+				display: block;
+				padding: 0 16px;
+				text-decoration: none;
+				color: var(--app-secondary-color);
+				line-height: 40px;
+			}
+
+			.drawer-list a.iron-selected {
+				color: black;
+				font-weight: bold;
+			}
+		</style>
+
+		<link rel="stylesheet" href="../resources/css/main/index.css">
+        <link rel="stylesheet" href="../resources/css/animate.css">
+		<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+
+		<!--<app-location route="{{route}}"></app-location>
+		<app-route
+				route="{{route}}"
+				pattern="/:page"
+				data="{{routeData}}"
+				tail="{{subroute}}"></app-route>-->
+
+		<!--<app-drawer-layout>
+			<app-drawer id="drawer" slot="drawer">
+				<app-toolbar>Menu</app-toolbar>
+				<iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+					<a name="view1" href="/view1">View One</a>
+					<a name="view2" href="/view2">View Two</a>
+					<a name="view3" href="/view3">View Three</a>
+				</iron-selector>
+			</app-drawer>
+
+			
+			<app-header-layout has-scrolling-region>
+				<app-header slot="header" condenses reveals effects="waterfall">
+					<app-toolbar>
+						<paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
+						<div main-title>My App</div>
+					</app-toolbar>
+				</app-header>
+
+				<iron-pages
+						selected="[[page]]"
+						attr-for-selected="name"
+						fallback-selection="view404"
+						role="main">
+					<my-view1 name="view1"></my-view1>
+					<my-view2 name="view2"></my-view2>
+					<my-view3 name="view3"></my-view3>
+					<my-view404 name="view404"></my-view404>
+				</iron-pages>
+			</app-header-layout>
+		</app-drawer-layout>-->
+
+		<div class="site-content main-body" id="sc-main">
+
+			<div class="global-nav default animated slideInDown">
+				<div class="nav-inner">
+					<div class="nav-content-wrapper">
+						<div class="opt-left opt-items">
+							<div class="menu-toggle opt-items-inner">
+								<div class="toggle-btn">
+									<paper-icon-button icon="menu"></paper-icon-button>
+								</div>
+							</div>
+							<div class="menu-logo-wrapper opt-items-inner">
+								<div class="logo-container">
+									<span class="logo"></span>
+								</div>
+							</div>
+							<div class="menu-page-info opt-items-inner">
+								<div class="page-info">
+									<div class="page-loader">
+										<div class="page-load-inner">
+											<span class="spin-loader"></span>
+										</div>
+									</div>
+									<!--<div class="page-logo">
+										<img src="resources/img/logo_txt.svg">
+									</div>-->
+									<div class="page-visual">
+										<div class="visual-cont" id="page-vis">
+											<!--<div class="visual-brand-logo">
+												<img src="PNGPIX-COM-Microsoft-Logo-Icon-PNG-Transparent-500x500.png" class="brand-logo">
+											</div>-->
+											<div class="visual-icon">
+												<span class="icon-home-button"></span>
+											</div>
+										</div>
+									</div>
+									<div class="page-title">
+										<span class="page-name-cont" id="page-name">Home</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="opt-center opt-items">
+							<div class="nav-search">
+								<div class="nav-search-form">
+									<input type="search" placeholder="Search" class="search-bar" results=5 name=s>
+								</div>
+							</div>
+						</div>
+
+						<div class="opt-right opt-items">
+							<div class="app-tray-item search-btn-nav">
+								<a href="#"><span class="icon-searching-magnifying-glass"></span></a>
+							</div>
+							<div class="app-tray-item notifier">
+								<a href="#">
+									<span class="icon-black-bubble-speech"></span>
+									<span class="notifier-bell chat-n"><span>37</span></span>
+								</a>
+							</div>
+							<div class="app-tray-item notifier">
+								<a href="#">
+									<span class="icon-notifications-button"></span>
+									<span class="notifier-bell"><span>5</span></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<app-drawer>
+				<div class="nav-menu-drawer">
+
+				</div>
+			</app-drawer>
+
+			<div class="content-wrapper clearfix">
+				<div class="content-left">
+					<div class="user-feed">
+
+						<div class="user-feed-container">
+
+							<div class="uposts-feed-loader-prompt">
+								<span class="spin-loader"></span>
+								<span class="loader-comment">Loading posts...</span>
+							</div>
+
+							<div class="upost-feed-case animated" id="upost-feeds">
+
+								<div class="upost-view">
+									<div class="upost-view-controller upost-options">
+										<a class="upost-author-img" href="#">
+											<img src="resources/img/cont_img/zDo-gAo0_400x400.jpg">
+										</a>
+
+										<a href="#" class="up-one">
+											<div class="up-one-tally">
+												<span class="icon-up-arrow-key"></span>
+												<span class="up-post-counter">4.3K</span>
+											</div>
+										</a>
+									</div>
+
+									<div class="upost-view-main">
+										<div class="upost-author-nametag">
+											<div class="upost-fname">
+												<a href="#">
+													<span class="fname-sm">Elon Musk</span>
+												</a>
+
+												<small class="upost-dt-stamp">15m</small>
+											</div>
+
+											<div class="upost-uname">
+												<a href="#">
+													<span class="at-name-sm">@elonmusk</span>
+												</a>
+											</div>
+										</div>
+
+										<div class="upost-view-content">
+											<p>Just wanted to write a note of appreciation to the many Australians who came out in support of the battery plan, especially <a href="#">@mcannonbrookes</a></p>
+										</div>
+
+										<div class="upost-view-toolbar">
+											<div class="upost-cont-options">
+												<a href="#" class="upost-opt-item"><span class="icon-chat-bubbles"></span></a>
+												<a href="#" class="upost-opt-item"><span class="icon-show-more-button-with-three-dots"></span></a>
+											</div>
+										</div>
+
+										<div class="upost-replies">
+											<div class="upost-view">
+												<div class="upost-view-controller upost-options">
+													<a class="upost-author-img" href="#">
+														<img src="resources/img/cont_img/UgHLJJ8n_400x400.jpeg">
+													</a>
+
+													<a href="#" class="up-one">
+														<div class="up-one-tally">
+															<span class="icon-up-arrow-key"></span>
+															<span class="up-post-counter">44</span>
+														</div>
+													</a>
+												</div>
+
+												<div class="upost-view-main">
+													<div class="upost-author-nametag">
+														<div class="upost-fname">
+															<a href="#">
+																<span class="fname-sm">Jon Rettinger</span>
+															</a>
+
+															<small class="upost-dt-stamp">1d</small>
+														</div>
+
+														<div class="upost-uname">
+															<a href="#">
+																<span class="at-name-sm">@jon4lakers</span>
+															</a>
+														</div>
+													</div>
+
+													<div class="upost-view-content">
+														<p><a href="#">@elonmusk</a> Same here.. I had to do a lot of notes as well, however I also had to do a lot of laundry and clean my old couch (because I accidentally dropped coffee on it).</p>
+													</div>
+
+													<div class="upost-view-toolbar">
+														<div class="upost-cont-options">
+															<a href="#" class="upost-opt-item"><span class="icon-chat-bubbles"></span></a>
+															<a href="#" class="upost-opt-item"><span class="icon-show-more-button-with-three-dots"></span></a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+
+								<div class="upost-view">
+									<div class="upost-view-controller upost-options">
+										<a class="upost-author-img" href="#">
+											<img src="resources/img/cont_img/Wv_8ZDrX_400x400.jpg">
+										</a>
+
+										<a href="#" class="up-one">
+											<div class="up-one-tally">
+												<span class="icon-up-arrow-key"></span>
+												<span class="up-post-counter">5.32K</span>
+											</div>
+										</a>
+									</div>
+
+									<div class="upost-view-main">
+										<div class="upost-author-nametag">
+											<div class="upost-fname">
+												<a href="#">
+													<span class="fname-sm">Justin Trudeau</span>
+												</a>
+
+												<small class="upost-dt-stamp">1d</small>
+											</div>
+
+											<div class="upost-uname">
+												<a href="#">
+													<span class="at-name-sm">@justintrudeau</span>
+												</a>
+											</div>
+										</div>
+
+										<div class="upost-view-content">
+											<p>Congratulations to Abbotsford's <a href="#">@ahadwingolf</a> on winning the PGA's <a href="#">#ValsparChampionship</a> today, and all the best on your upcoming wedding!</p>
+										</div>
+
+										<div class="upost-view-toolbar">
+											<div class="upost-cont-options">
+												<a href="#" class="upost-opt-item"><span class="icon-chat-bubbles"></span></a>
+												<a href="#" class="upost-opt-item"><span class="icon-show-more-button-with-three-dots"></span></a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="upost-view">
+									<div class="upost-view-controller upost-options">
+										<a class="upost-author-img" href="#">
+											<img src="resources/img/cont_img/15vpk5RQ_400x400.jpg">
+										</a>
+
+										<a href="#" class="up-one">
+											<div class="up-one-tally liked">
+												<span class="icon-up-arrow-key"></span>
+												<span class="up-post-counter">843</span>
+											</div>
+										</a>
+									</div>
+
+									<div class="upost-view-main">
+										<div class="upost-author-nametag">
+											<div class="upost-fname">
+												<a href="#">
+													<span class="fname-sm">Businessweek</span>
+												</a>
+
+												<small class="upost-dt-stamp">1d</small>
+											</div>
+
+											<div class="upost-uname">
+												<a href="#">
+													<span class="at-name-sm">@BW</span>
+												</a>
+											</div>
+										</div>
+
+										<div class="upost-view-content">
+											<p>3D-printed jewelry is going mainstream <a href="#">http://bloom.bg/2mgEINJ</a></p>
+											<div class="up-img">
+												<img src="resources/img/cont_img/C6wNvc0WkAAnbcE.jpg">
+											</div>
+										</div>
+
+										<div class="upost-view-toolbar">
+											<div class="upost-cont-options">
+												<a href="#" class="upost-opt-item"><span class="icon-chat-bubbles"></span></a>
+												<a href="#" class="upost-opt-item"><span class="icon-show-more-button-with-three-dots"></span></a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="upost-view">
+									<div class="upost-view-controller upost-options">
+										<a class="upost-author-img" href="#">
+											<img src="resources/img/cont_img/UgHLJJ8n_400x400.jpeg">
+										</a>
+
+										<a href="#" class="up-one">
+											<div class="up-one-tally">
+												<span class="icon-up-arrow-key"></span>
+												<span class="up-post-counter">44</span>
+											</div>
+										</a>
+									</div>
+
+									<div class="upost-view-main">
+										<div class="upost-author-nametag">
+											<div class="upost-fname">
+												<a href="#">
+													<span class="fname-sm">Jon Rettinger</span>
+												</a>
+
+												<small class="upost-dt-stamp">1d</small>
+											</div>
+
+											<div class="upost-uname">
+												<a href="#">
+													<span class="at-name-sm">@jon4lakers</span>
+												</a>
+											</div>
+										</div>
+
+										<div class="upost-view-content">
+											<p>Just finished a 26 minute convo with my kid about apple pouches. I evidently did not adequately appreciate their nuances.</p>
+										</div>
+
+										<div class="upost-view-toolbar">
+											<div class="upost-cont-options">
+												<a href="#" class="upost-opt-item"><span class="icon-chat-bubbles"></span></a>
+												<a href="#" class="upost-opt-item"><span class="icon-show-more-button-with-three-dots"></span></a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="upost-view">
+									<div class="upost-view-controller upost-options">
+										<a class="upost-author-img" href="#">
+											<img src="resources/img/cont_img/9-Lwv1sI_400x400.jpg">
+										</a>
+
+										<a href="#" class="up-one">
+											<div class="up-one-tally">
+												<span class="icon-up-arrow-key"></span>
+												<span class="up-post-counter">2K</span>
+											</div>
+										</a>
+									</div>
+
+									<div class="upost-view-main">
+										<div class="upost-author-nametag">
+											<div class="upost-fname">
+												<a href="#">
+													<span class="fname-sm">Amazon</span>
+												</a>
+
+												<small class="upost-dt-stamp">Mar 10</small>
+											</div>
+
+											<div class="upost-uname">
+												<a href="#">
+													<span class="at-name-sm">@amazon</span>
+												</a>
+											</div>
+										</div>
+
+										<div class="upost-view-content">
+											<p>Koogeek Smart Plug, WiFi, for Apple HomeKit with Siri, Electronics Controller on 2.4Ghz... <a href="#">https://www.amazon.com/gp/...</a></p>
+											<div class="up-img">
+												<img src="resources/img/cont_img/C6wlnVNWoAANupd.jpg">
+											</div>
+										</div>
+
+										<div class="upost-view-toolbar">
+											<div class="upost-cont-options">
+												<a href="#" class="upost-opt-item"><span class="icon-chat-bubbles"></span></a>
+												<a href="#" class="upost-opt-item"><span class="icon-show-more-button-with-three-dots"></span></a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="loader load-uposts-loader">
+								<span class="spin-loader load-upost-spinner"></span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="content-right">
+					<div class="hashtags-popular">
+						<div class="panel-mini-title"><span class="icon-burn-button"></span> <span>Trending tags</span></div>
+
+						<span>#food</span>
+						<span>#Man</span>
+						<span>#Syria</span>
+						<span>#MrBroast</span>
+						<span>#CleanBOI</span>
+						<span>#amp</span>
+						<span>#lol</span>
+						<span>#funny_jokes</span>
+						<span>#left_right_up_down</span>
+						<span>#shitsberg</span>
+						<span>#ngga</span>
+						<span>#python3_6</span>
+						<span>#whatsapp</span>
+						<span>#ring</span>
+						<span>#calf</span>
+						<span>#justiceleague</span>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</template>
+
+	<script>
+		class MyApp extends Polymer.Element {
+
+			static get is() { return 'my-app'; }
+
+			static get properties() {
+				return {
+					page: {
+						type: String,
+						reflectToAttribute: true,
+						observer: '_pageChanged',
+					},
+				};
+			}
+
+			static get observers() {
+				return [
+					'_routePageChanged(routeData.page)',
+				];
+			}
+
+			_routePageChanged(page) {
+				// Polymer 2.0 will call with `undefined` on initialization.
+				// Ignore until we are properly called with a string.
+				if (page === undefined) {
+					return;
+				}
+
+				// If no page was found in the route data, page will be an empty string.
+				// Deault to 'view1' in that case.
+				this.page = page || 'view1';
+
+				// Close a non-persistent drawer when the page & route are changed.
+				if (!this.$.drawer.persistent) {
+					this.$.drawer.close();
+				}
+			}
+
+			_pageChanged(page) {
+				// Load page import on demand. Show 404 page if fails
+				var resolvedPageUrl = this.resolveUrl('my-' + page + '.html');
+				Polymer.importHref(
+						resolvedPageUrl,
+						null,
+						this._showPage404.bind(this),
+						true);
+			}
+
+			_showPage404() {
+				this.page = 'view404';
+			}
+		}
+
+		window.customElements.define(MyApp.is, MyApp);
+	</script>
+</dom-module>

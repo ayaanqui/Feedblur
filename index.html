@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Feedblur</title>
+		<meta name="description" content="My App description">
+
+		<link rel="icon" href="resources/img/favicon.ico">
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="resources/css/main/index.css">
+        <link rel="stylesheet" href="resources/css/animate.css">
+
+		<!-- JS -->
+        <script src="resources/js/jquery.min.js"></script>
+		<script src="resources/js/main.js"></script>
+
+		<!-- See https://goo.gl/qRE0vM -->
+		<meta name="theme-color" content="#3f51b5">
+
+		<!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="application-name" content="Feedblur">
+
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="apple-mobile-web-app-title" content="Feedblur">
+
+		<!-- Homescreen icons -->
+		<link rel="apple-touch-icon" href="resources/img/manifest/icon-48x48.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="resources/img/manifest/icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="96x96" href="resources/img/manifest/icon-96x96.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="resources/img/manifest/icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="192x192" href="resources/img/manifest/icon-192x192.png">
+
+		<!-- Tile icon for Windows 8 (144x144 + tile color) -->
+		<meta name="msapplication-TileImage" content="resources/img/manifest/icon-144x144.png">
+		<meta name="msapplication-TileColor" content="#3f51b5">
+		<meta name="msapplication-tap-highlight" content="no">
+	</head>
+	<body>
+		<div class="site-content main-body" id="sc-main">
+
+			<input id="toggle-sidebar" type="checkbox" role="button">
+
+			<div class="global-nav default">
+				<div class="nav-inner">
+					<div class="nav-content-wrapper">
+						<div class="opt-left opt-items">
+							<div class="menu-toggle opt-items-inner">
+								<label class="toggle-btn" for="toggle-sidebar">
+									<span class="icon-menu-button"></span>
+								</label>
+							</div>
+							<div class="menu-logo-wrapper opt-items-inner">
+								<div class="logo-container">
+									<span class="logo"></span>
+								</div>
+							</div>
+							<div class="menu-page-info opt-items-inner">
+								<div class="page-info">
+									<div class="page-loader">
+										<div class="page-load-inner">
+											<span class="spin-loader"></span>
+										</div>
+									</div>
+									<!--<div class="page-logo">
+										<img src="resources/img/logo_txt.svg">
+									</div>-->
+									<div class="page-visual">
+										<div class="visual-cont" id="page-vis">
+											<!--<div class="visual-brand-logo">
+												<img src="PNGPIX-COM-Microsoft-Logo-Icon-PNG-Transparent-500x500.png" class="brand-logo">
+											</div>-->
+											<div class="visual-icon">
+												<span class="icon-home-button"></span>
+											</div>
+										</div>
+									</div>
+									<div class="page-title">
+										<span class="page-name-cont" id="page-name">Home</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="opt-center opt-items">
+							<div class="nav-search">
+								<div class="nav-search-form">
+									<input type="search" placeholder="Search" class="search-bar" results=5 name=s>
+								</div>
+							</div>
+						</div>
+
+						<div class="opt-right opt-items">
+							<div class="app-tray-item search-btn-nav">
+								<a href="#"><span class="icon-searching-magnifying-glass"></span></a>
+							</div>
+
+							<div class="app-tray-item notifier">
+								<a href="#">
+									<span class="icon-notifications-button"></span>
+									<span class="notifier-bell"><span>5</span></span>
+								</a>
+							</div>
+
+							<div class="app-tray-item user-profile-pic">
+								<a href="#">
+									<img src="resources/img/cont_img/f_8hogHL.jpg" class="nav-user-pic">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="sidebar-nav">
+				<div class="sidebar-inner">
+					<div class="sidebar-top">
+
+					</div>
+					<div class="sidebar-main">
+						<div class="sidebar-menu-items">
+							<a href="#" class="menu-item active">
+								<span class="menu-icon icon-home-button"></span>
+								<span class="menu-name">Home</span>
+							</a>
+							<a href="#" class="menu-item">
+								<span class="menu-icon icon-screen-with-news-sections"></span>
+								<span class="menu-name">Read</span>
+							</a>
+							<a href="#" class="menu-item">
+								<span class="menu-icon icon-underline-button"></span>
+								<span class="menu-name">Answer</span>
+							</a>
+							<a href="#" class="menu-item">
+								<span class="menu-icon icon-bookmark-button-1"></span>
+								<span class="menu-name">Read Later</span>
+							</a>
+							<a href="#" class="menu-item">
+								<span class="menu-icon icon-mark-as-favorite-star"></span>
+								<span class="menu-name">Favorites</span>
+							</a>
+							<a href="#" class="menu-item">
+								<span class="menu-icon icon-users-social-symbol"></span>
+								<span class="menu-name">Community</span>
+							</a>
+							<a href="#" class="menu-item">
+								<span class="menu-icon icon-flash-on-indicator"></span>
+								<span class="menu-name">Trending</span>
+							</a>
+							<a href="#" class="menu-item">
+								<span class="menu-icon icon-circles-extend-button"></span>
+								<span class="menu-name">Groups</span>
+							</a>
+						</div>
+
+						<div class="sidebar-extras">
+							<div class="sb-info">
+								<ul class="sb-links">
+									<li><a href="#">About</a></li>
+									<li><a href="#">Contact</a></li>
+									<li><a href="#">Privacy</a></li>
+									<li><a href="#">Terms</a></li>
+									<li><a href="#">Feedback</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="sidebar-bottom">
+
+					</div>
+				</div>
+			</div>
+
+			<label class="sidebar-dialog" for="toggle-sidebar"></label>
+
+			<div class="content-wrapper clearfix">
+				<div class="content-left">
+					<div class="user-feed">
+
+						<div class="user-feed-container">
+
+							<div class="uposts-feed-loader-prompt">
+								<span class="spin-loader"></span>
+								<span class="loader-comment">Loading posts...</span>
+							</div>
+
+							<div class="upost-feed-case animated" id="upost-feeds">
+
+								<div class="upost-view">
+									<div class="upost-view-tags-categories">
+										<div class="upost-view-tags-categories-inner">
+											<a href="#" class="upost-category-item">
+												<img src="resources/img/cont_img/samsung.jpg">
+												<span>Samsung</span>
+											</a>
+
+											<a href="#" class="upost-category-item">
+												<span>Galaxy S7 edge</span>
+											</a>
+
+											<a href="#" class="upost-category-item">
+												<img src="resources/img/cont_img/android.jpg">
+												<span>Android</span>
+											</a>
+
+											<a href="#" class="upost-category-item">
+												<span>Nougat</span>
+											</a>
+										</div>
+									</div>
+
+									<div class="upost-view-controller upost-options">
+										<a class="upost-author-img" href="#">
+											<img src="resources/img/cont_img/main-thumb-127878106-200-hrtcswjpxokzqcbpcsjmtvebqnxpuold.jpg">
+										</a>
+
+										<a href="#" class="up-one">
+											<div class="up-one-tally">
+												<span class="icon-up-arrow-key"></span>
+												<span class="up-post-counter">3</span>
+											</div>
+										</a>
+									</div>
+
+									<div class="upost-view-main">
+										<a href="#">
+											<div class="upost-view-heading">
+												<h1>After I got the Nougat update my notification center font is too small, how do I fix it?</h1>
+											</div>
+
+											<div class="upost-author-nametag">
+												<div class="upost-fname">
+													<a href="#">
+														<span class="fname-sm">Lynne</span>
+
+														<span class="upost-uname">
+															<span class="at-name-sm">@lynne</span>
+														</span>
+													</a>
+
+													<small class="upost-dt-stamp">50sec</small>
+												</div>
+											</div>
+
+											<div class="upost-view-content">
+												<p>I installed the Nougat update and now my notification center font is so small I have to use a magnifying glass to be able to read it...</p>
+											</div>
+
+											<div class="upost-view-toolbar">
+												<div class="upost-cont-options">
+													<a href="#" class="upost-opt-item"><span>Answer<span class="red-alert">1</span></span></a>
+													<a href="#" class="upost-opt-item"><span class="icon-share-button"></span></a>
+													<a href="#" class="upost-opt-item"><span class="icon-show-more-button-with-three-dots"></span></a>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+
+
+								<div class="upost-view">
+									<div class="upost-view-tags-categories">
+										<div class="upost-view-tags-categories-inner">
+											<a href="#" class="upost-category-item">
+												<img src="resources/img/cont_img/mathematics.jpg">
+												<span>Mathematics</span>
+											</a>
+
+											<a href="#" class="upost-category-item">
+												<img src="resources/img/cont_img/main-thumb-t-1823-200-f9T86yoaBpQUNIAhEjadJYnf7vNOTvOU.jpg">
+												<span>Trigonometry</span>
+											</a>
+										</div>
+									</div>
+
+									<div class="upost-view-controller upost-options">
+										<a class="upost-author-img" href="#">
+											<img src="resources/img/cont_img/main-thumb-4784173-200-7hlpBdvjdJ0TLziUA3fo95QSzpsfpPsH.jpg">
+										</a>
+
+										<a href="#" class="up-one">
+											<div class="up-one-tally">
+												<span class="icon-up-arrow-key"></span>
+												<span class="up-post-counter">50</span>
+											</div>
+										</a>
+									</div>
+
+									<div class="upost-view-main">
+										<a href="#">
+											<div class="upost-view-heading">
+												<h1>What is the area of the shaded region of this triangle?</h1>
+											</div>
+
+											<div class="upost-author-nametag">
+												<div class="upost-fname">
+													<a href="#">
+														<span class="fname-sm">Dheeraj Dhobley</span>
+
+														<span class="upost-uname">
+															<span class="at-name-sm">@dheer_aj</span>
+														</span>
+													</a>
+
+													<small class="upost-dt-stamp">3min</small>
+												</div>
+											</div>
+
+											<div class="upost-view-content">
+												<p><img src="resources/img/cont_img/main-qimg-d88b8bd4aef90f9ab75cd38fd449d6f1.jpg"> Is it 16 square units, 32 square units, 17 square units, or 36 square units?</p>
+											</div>
+
+											<div class="upost-view-toolbar">
+												<div class="upost-cont-options">
+													<a href="#" class="upost-opt-item"><span>Answers<span class="red-alert">29</span></span></a>
+													<a href="#" class="upost-opt-item"><span class="icon-share-button"></span></a>
+													<a href="#" class="upost-opt-item"><span class="icon-show-more-button-with-three-dots"></span></a>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+
+
+								<div class="upost-view">
+									<div class="upost-view-tags-categories">
+										<div class="upost-view-tags-categories-inner">
+											<a href="#" class="upost-category-item">
+												<img src="resources/img/cont_img/mathematics.jpg">
+												<span>Mathematics</span>
+											</a>
+										</div>
+									</div>
+
+									<div class="upost-view-controller upost-options">
+										<a class="upost-author-img" href="#">
+											<img src="resources/img/cont_img/main-thumb-840273-200-nKnwGGv2A5BNadlFEpT7juG3cRSqS86B.jpg">
+										</a>
+
+										<a href="#" class="up-one">
+											<div class="up-one-tally">
+												<span class="icon-up-arrow-key"></span>
+												<span class="up-post-counter">8</span>
+											</div>
+										</a>
+									</div>
+
+									<div class="upost-view-main">
+										<a href="#">
+											<div class="upost-view-heading">
+												<h1>If f(8)=56, f(7)=42, f(6)=30, f(5)=20, what does f(3)=?</h1>
+											</div>
+
+											<div class="upost-author-nametag">
+												<div class="upost-fname">
+													<a href="#">
+														<span class="fname-sm">Mark Harrison</span>
+
+														<span class="upost-uname">
+															<span class="at-name-sm">@doublebutter</span>
+														</span>
+													</a>
+
+													<small class="upost-dt-stamp">17min</small>
+												</div>
+											</div>
+
+											<div class="upost-view-toolbar">
+												<div class="upost-cont-options">
+													<a href="#" class="upost-opt-item"><span>Answers<span class="red-alert">6</span></span></a>
+													<a href="#" class="upost-opt-item"><span class="icon-share-button"></span></a>
+													<a href="#" class="upost-opt-item"><span class="icon-show-more-button-with-three-dots"></span></a>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+
+
+								<div class="upost-view">
+									<div class="upost-view-tags-categories">
+										<div class="upost-view-tags-categories-inner">
+											<a href="#" class="upost-category-item">
+												<img src="resources/img/cont_img/computerscience.jpg">
+												<span>Computer Science</span>
+											</a>
+
+											<a href="#" class="upost-category-item">
+												<img src="resources/img/cont_img/programming.jpg">
+												<span>Programming</span>
+											</a>
+
+											<a href="#" class="upost-category-item">
+												<img src="resources/img/cont_img/machinelearning.jpg">
+												<span>Machine Learning</span>
+											</a>
+
+											<a href="#" class="upost-category-item">
+												<img src="resources/img/cont_img/mathematics.jpg">
+												<span>Mathematics</span>
+											</a>
+										</div>
+									</div>
+
+									<div class="upost-view-controller upost-options">
+										<a class="upost-author-img" href="#">
+											<img src="resources/img/cont_img/main-thumb-43083007-200-tjihwwiqfbctsxoebjdmrthefdvmlfld.jpg">
+										</a>
+
+										<a href="#" class="up-one">
+											<div class="up-one-tally">
+												<span class="icon-up-arrow-key"></span>
+												<span class="up-post-counter">12.5K</span>
+											</div>
+										</a>
+									</div>
+
+									<div class="upost-view-main">
+										<a href="#">
+											<div class="upost-view-heading">
+												<h1>How do I learn machine learning?</h1>
+											</div>
+
+											<div class="upost-author-nametag">
+												<div class="upost-fname">
+													<a href="#">
+														<span class="fname-sm">Kevin Murphy</span>
+
+														<span class="upost-uname">
+															<span class="at-name-sm">@kev</span>
+														</span>
+													</a>
+
+													<small class="upost-dt-stamp">18min</small>
+												</div>
+											</div>
+
+											<div class="upost-view-content">
+												<p>Obviously I think my Machine learning textbook  is pretty good :) However, the current version is admittedly rather hard for beginners...</p>
+											</div>
+
+											<div class="upost-view-toolbar">
+												<div class="upost-cont-options">
+													<a href="#" class="upost-opt-item"><span>Answers<span class="red-alert">46</span></span></a>
+													<a href="#" class="upost-opt-item"><span class="icon-share-button"></span></a>
+													<a href="#" class="upost-opt-item"><span class="icon-show-more-button-with-three-dots"></span></a>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+
+
+								<div class="upost-view">
+									<div class="upost-view-tags-categories">
+										<div class="upost-view-tags-categories-inner">
+											<a href="#" class="upost-category-item">
+												<img src="resources/img/cont_img/programming.jpg">
+												<span>Programming</span>
+											</a>
+										</div>
+									</div>
+
+									<div class="upost-view-controller upost-options">
+										<a class="upost-author-img" href="#">
+											<img src="resources/img/cont_img/main-thumb-29084614-200-f6dxj3cPT7Y91EHYA73vonGHjrZUAcAb.jpg">
+										</a>
+
+										<a href="#" class="up-one">
+											<div class="up-one-tally">
+												<span class="icon-up-arrow-key"></span>
+												<span class="up-post-counter">120</span>
+											</div>
+										</a>
+									</div>
+
+									<div class="upost-view-main">
+										<a href="#">
+											<div class="upost-view-heading">
+												<h1>What are some great truths of computer programming?</h1>
+											</div>
+
+											<div class="upost-author-nametag">
+												<div class="upost-fname">
+													<a href="#">
+														<span class="fname-sm">Sammy Ngari</span>
+
+														<span class="upost-uname">
+															<span class="at-name-sm">@sammy_nagri</span>
+														</span>
+													</a>
+
+													<small class="upost-dt-stamp">1d</small>
+												</div>
+											</div>
+
+											<div class="upost-view-content">
+												<p>Programming is 99% self-taught. See all that stuff you learnt in that Python class? Yeah, you're going to relearn it all when working on a real project. There's... <a href="#">Read More</a></p>
+											</div>
+
+											<div class="upost-view-toolbar">
+												<div class="upost-cont-options">
+													<a href="#" class="upost-opt-item"><span>Answers<span class="red-alert">8</span></span></a>
+													<a href="#" class="upost-opt-item"><span class="icon-share-button"></span></a>
+													<a href="#" class="upost-opt-item"><span class="icon-show-more-button-with-three-dots"></span></a>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+
+
+								<div class="upost-view">
+									<div class="upost-view-tags-categories">
+										<div class="upost-view-tags-categories-inner">
+											<a href="#" class="upost-category-item">
+												<img src="resources/img/cont_img/mathematics.jpg">
+												<span>Mathematics</span>
+											</a>
+										</div>
+									</div>
+
+									<div class="upost-view-controller upost-options">
+										<a class="upost-author-img" href="#">
+											<img src="resources/img/cont_img/def-pi.jpg">
+										</a>
+
+										<a href="#" class="up-one">
+											<div class="up-one-tally">
+												<span class="icon-up-arrow-key"></span>
+												<span class="up-post-counter">3</span>
+											</div>
+										</a>
+									</div>
+
+									<div class="upost-view-main">
+										<a href="#">
+											<div class="upost-view-heading">
+												<h1>What's the solution to the McDonalds math problem?</h1>
+											</div>
+
+											<div class="upost-author-nametag">
+												<div class="upost-fname">
+													<a href="#">
+														<span class="fname-sm">Benjamin Cooper</span>
+
+														<span class="upost-uname">
+															<span class="at-name-sm">@bencoop</span>
+														</span>
+													</a>
+
+													<small class="upost-dt-stamp">Mar 18</small>
+												</div>
+											</div>
+
+											<div class="upost-view-content">
+												<p>
+													<img src="resources/img/cont_img/main-qimg-e980a09b6f7d4122703c3e70a107dd62.jpg">
+													10 + 10 + 10 = 30, 10 + 5 + 5 = 20, 5 + 1 x 10 = (15?) I think you multiply first, then add the 5; but most people think the answer is 60
+												</p>
+											</div>
+
+											<div class="upost-view-toolbar">
+												<div class="upost-cont-options">
+													<a href="#" class="upost-opt-item"><span>Answers<span class="red-alert">0</span></span></a>
+													<a href="#" class="upost-opt-item"><span class="icon-share-button"></span></a>
+													<a href="#" class="upost-opt-item"><span class="icon-show-more-button-with-three-dots"></span></a>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+
+
+							</div>
+
+							<div class="loader load-uposts-loader">
+								<span class="spin-loader load-upost-spinner"></span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="content-right">
+					<div class="hashtags-popular">
+						<div class="panel-mini-title"><span class="icon-burn-button"></span> <span>Trending tags</span></div>
+
+						<span>#food</span>
+						<span>#Man</span>
+						<span>#Syria</span>
+						<span>#MrBroast</span>
+						<span>#CleanBOI</span>
+						<span>#amp</span>
+						<span>#lol</span>
+						<span>#funny_jokes</span>
+						<span>#left_right_up_down</span>
+						<span>#shitsberg</span>
+						<span>#ngga</span>
+						<span>#python3_6</span>
+						<span>#whatsapp</span>
+						<span>#ring</span>
+						<span>#calf</span>
+						<span>#justiceleague</span>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>
